@@ -1,5 +1,7 @@
 // ASSESSMENT 3: Coding Practical Questions with Jest
 
+
+
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
 // If you get stuck, please leave comments to help us understand your thought process
@@ -15,6 +17,13 @@
 
 // a) Create a test with expect statements for each of the variables provided.
 
+// describe("fibOutput",()=>{
+//     it("returns a new array of a given length containing numbers of the Fibonacci sequence",()=>{
+//         expect(fibOutput(fibLength1)).toEqual([1, 1, 2, 3, 5, 8])
+//         expect(fibOutput(fibLength2)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+//     })
+// })
+
 const fibLength1 = 6
 // Expected output: [1, 1, 2, 3, 5, 8]
 
@@ -24,10 +33,41 @@ const fibLength2 = 10
 
 // b) Create the function that makes the test pass.
 
+//PSUEDO CODE:
+// 1. create a function called fibOutput that takes a number
+// 2. set input value to the length of an array
+// 3. populate said array with the fib algo
+
+const fibOutput = (number) => {
+    var fibArray = new Array(number)
+
+    let a = 0, b = 1, c = number
+    for(let i = 0; i <= number; i++) {
+        c = a + b
+        
+        a = b
+        
+        b = c
+        if(fibArray.length < number) {
+            fibArray.push(c)
+            return fibArray
+        }
+    }
+
+}
+console.log(fibOutput(fibLength1))
+
 
 // --------------------2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
 
 // a) Create a test with expect statements for each of the variables provided.
+
+// describe("lowToHighOddNums",()=>{
+//     it("returns a new array of only odd numbers ordered from lesat to greatest",()=>{
+//         expect(lowToHighOddNums(fullArr1)).toEqual([-9, 7, 9, 199])
+//         expect(lowToHighOddNums(fullArr2)).toEqual([-823, 7, 23])
+//     })
+// })
 
 const fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
 // Expected output: [-9, 7, 9, 199]
