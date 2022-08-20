@@ -55,7 +55,7 @@ const fibOutput = (number) => {
     }
 
 }
-console.log(fibOutput(fibLength1))
+// console.log(fibOutput(fibLength1))
 
 
 // --------------------2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
@@ -83,6 +83,14 @@ const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
 
 // a) Create a test with expect statements for each of the variables provided.
 
+// describe("sumArrayBuilder",()=>{
+//     it("returns a new array of incrementing sums of each element",()=>{
+//         expect(sumArrayBuilder(numbersToAdd1)).toEqual([2, 6, 51, 60])
+//         expect(sumArrayBuilder(numbersToAdd2)).toEqual([0, 7, -1, 11])
+//         expect(sumArrayBuilder(numbersToAdd3)).toEqual([])
+//     })
+// })
+
 const numbersToAdd1 = [2, 4, 45, 9]
 // Expected output: [2, 6, 51, 60]
 
@@ -94,3 +102,28 @@ const numbersToAdd3 = []
 
 
 // b) Create the function that makes the test pass.
+//Pseudo Code
+//1. Create a function called sumArrayBuilder that takes an array as an input
+//2. use .map to iterate through the given array.
+//3. take each indexes value and add it while adding that value into the new array
+//4. return that new array
+
+const sumArrayBuilder = (array) => {
+    
+    var newArray = array.map((value, index)=>{
+        if(index === 0) {
+            console.log(array[0])
+            return array[0]
+        }else{
+            console.log("value: ", value);
+            console.log("index: ", index);
+            var newItem = array[index] + array[index - 1]
+            console.log("newItem: ", newItem)
+            index++
+            return newItem
+     
+        }
+    })    
+   
+}
+console.log(sumArrayBuilder(numbersToAdd1))
