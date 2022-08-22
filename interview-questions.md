@@ -55,22 +55,23 @@ Researched answer: After some greater research, classes are defined as templates
 
 Your answer: State is a concept surrounding the status of a given value, function or program as a whole. State is something that can be passed down when modified to other files (in react specifically components) also known as children. This information is important to pass on when describing the behavior of the different aspects of an application. This is done through props. the concept of props can be best described as a motion sensor (and are probably implemented in networked motion trackers), when movement is detected they send information back. This is a decent way to think about how state and props work in tandem. When something in the state changes, the props keyword is used to apply to value that will pass information back to the parent component showing that something has changed.
 
-Researched answer: After more research its important to note that without state, dynamic UI elements would be much harder to build. The relationship between state and props creates the ability for a trickle of information on specific actions to be passed from component to component to respond to changes. This is often associated with the onClick method in React. When something is clicked, as a developer, we want a response. When creating a state using useState -> (const[screenColor, setScreenColor] = useState(white)). If we have a click handler that switches a pages background color from white to green we would need to pass that data through as 
+Researched answer: After more research its important to note that without state, dynamic UI elements would be much harder to build. The relationship between state and props creates the ability for a trickle of information on specific actions to be passed from component to component to respond to changes(change in state). This is often associated with the onClick method in React. When something is clicked we want a response. We can set this up by creating a state using useState -> (const[screenColor, setScreenColor] = useState(white)). If we have a click handler that switches a pages background color from white to green we would need to pass that data through to the component dealing with screen color. A variable can be created which then is accessed within the component via the props keyword. Props is used to call the variable via dot notation and is then accessible to that component. From there a connection is made in the component call that references the variable in the return statement. All in all this is the relationship that makes state and props the power house duo of React.
 
 6. STRETCH: Which is the difference between a div and a span?
 
-Your answer:
+Your answer: Upon initial recollection I've only seen span used once and cant for the life of me remember exactly what the functionality is. In the case of a div, it acts as a kind of container in HTML that serves to package elements together. Its within this package that classes and IDs can be utilized to affect each element contained. 
 
-Researched answer:
+Researched answer: After further research the functionality of the span and div are only distinctive in their scope of affect. The utilization of a div as mentioned earlier is best executed on a group of elements, organizing them with a common goal in styling and functionality. In the case of span, a similar type of allocation of styles and functionality is performed on a piece of a line item. In this case, when applying specific styles to a piece of the webpage it might be best to use a span versus a div in that you can have most specific affects. On the contrary, big chunks of text and/or other elements can be uniformly stylized using a div. 
 
 ## Looking Ahead: Terms for Next Week
 
-1. Object-oriented programming:
+1. Object-oriented programming: The concept of organizing programs around data and objects versus functions and logic.
 
-2. Ruby:
+2. Ruby: Released in 1995, Ruby was built to be a simplistic and easy to use language that centered around the concept of "everything being an object". The main popularization around Ruby is the concept of blocks; statements that can dictate the behavior of methods in a concise way.
 
-3. Implicit return:
+3. Implicit return: A concept of using a form of short hand to "automatically" return a value when parens are omitted from a function call. This only works if the function takes a single expression. -> const add = x => x + 5
+                    add(5) -> //will return 10
 
-4. Ruby blocks:
+4. Ruby blocks: As mentioned earlier, ruby blocks are used to determine the behavior of a method using particular keywords.
 
-5. Ruby hashes:
+5. Ruby hashes: The concept of a hash is similar to an array in that there are key value pairs used to store and identify data. The key (no pun intended) difference in hashes is the index definition. While in array indexes are assigned number values, hashes have arbitrary values assigned to denote each index
