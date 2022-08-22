@@ -1,5 +1,7 @@
 // ASSESSMENT 3: Coding Practical Questions with Jest
 
+// const { boolean } = require("yargs")
+
 
 
 // Please read all questions thoroughly
@@ -39,23 +41,24 @@ const fibLength2 = 10
 // 3. populate said array with the fib algo
 
 const fibOutput = (number) => {
-    var fibArray = new Array(number)
-
+   var fibArray = new Array()
+   fibArray[0] = 1  
+   
     let a = 0, b = 1, c = number
-    for(let i = 0; i <= number; i++) {
+    for(let i = 1; i < number; i++) { 
+      
         c = a + b
         
         a = b
         
         b = c
-        if(fibArray.length < number) {
-            fibArray.push(c)
-            return fibArray
-        }
+
+        fibArray.push(c)
     }
+    return fibArray 
 
 }
-// console.log(fibOutput(fibLength1))
+
 
 
 // --------------------2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
@@ -77,6 +80,29 @@ const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
 
 
 // b) Create the function that makes the test pass.
+//Pseudo Code
+//1. Declare a function called lowToHighOddNums that takes the input of an array
+//2. Iterate through the array and determine which values are numbers and odd
+//3. use .sort method to take array and sort from lowest to highest for both arrays
+
+const lowToHighOddNums = (array) => {
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] === typeof number) {
+            if(array[i] % 2 === 0) {
+                return array[i]
+            }else{
+                i++
+            }
+        } else if(array[i] !== typeof number){
+            array.shift()
+        }
+    }
+    var newArray = array.sort(function(a,b) {
+        return a-b
+    })
+    return newArray
+}
+console.log(lowToHighOddNums(fullArr1))
 
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
@@ -110,20 +136,9 @@ const numbersToAdd3 = []
 
 const sumArrayBuilder = (array) => {
     
-    var newArray = array.map((value, index)=>{
-        if(index === 0) {
-            console.log(array[0])
-            return array[0]
-        }else{
-            console.log("value: ", value);
-            console.log("index: ", index);
-            var newItem = array[index] + array[index - 1]
-            console.log("newItem: ", newItem)
-            index++
-            return newItem
-     
-        }
-    })    
+  for(let i = 1; i < array.length; i++) {
+    array[i] = array[i] + array[i - 1]
+  }
+  return array  
    
 }
-console.log(sumArrayBuilder(numbersToAdd1))
